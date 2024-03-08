@@ -7,9 +7,10 @@
 , openssl
 , vulkan-loader
 , freetype
+, name
 }:
 let
-  cargoToml = builtins.fromTOML (builtins.readFile ../Cargo.toml);
+  cargoToml = builtins.fromTOML (builtins.readFile ../${name}/Cargo.toml);
 in
 rustPlatform.buildRustPackage {
   pname = cargoToml.package.name;

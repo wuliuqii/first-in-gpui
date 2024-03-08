@@ -40,7 +40,8 @@
     in
     {
       packages = eachSystem ({ pkgs }: {
-        hello = pkgs.callPackage ./nix { };
+        hello = pkgs.callPackage ./nix { name = "hello"; };
+        counter = pkgs.callPackage ./nix { name = "counter"; };
       });
 
       checks = eachSystem ({ pkgs }: {

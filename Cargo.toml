@@ -1,7 +1,8 @@
-[package]
-name = "hello-gpui"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+resolver = "2"
 
-[dependencies]
+members = ["hello", "counter"]
+
+[workspace.dependencies]
 gpui = { git = "https://github.com/zed-industries/zed" }
+
